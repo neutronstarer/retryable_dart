@@ -1,6 +1,6 @@
 name: retryable
 description: make operation retryable.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/neutronstarer/flutter_retryable
 
 environment:
@@ -9,7 +9,7 @@ environment:
   # flutter: ">=1.17.0"
 
 dependencies:
-  cancelable: ^0.0.1
+  cancelable: ^0.0.2
   flutter:
     sdk: flutter
 

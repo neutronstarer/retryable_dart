@@ -4,8 +4,8 @@
 
 ## 0.0.2
 
-* TODO: update dependencies
+* TODO: update dependencies.
 
 ## 0.0.3
 
-* TODO: optimize project
+* TODO: optimize project.

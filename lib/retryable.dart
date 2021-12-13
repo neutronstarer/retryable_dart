@@ -2,7 +2,7 @@ library retryable;
 
 import 'package:cancelable/cancelable.dart';
 
-Future<T> retry<T>(Future<T> Function() computation, {Cancelable? cancelable, Future? Function()? cancel, Future? Function(int time, dynamic e)? able}) async {
+Future<T> retry<T>(Future<T> Function() computation, {Cancelable? cancelable, Future<void> Function()? cancel, Future<void> Function(int i, dynamic error)? able}) async {
   bool cancelled = false;
   final sub = cancelable?.whenCancel(() {
     if (cancelled == true) {

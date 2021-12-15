@@ -1,14 +1,13 @@
 name: retryable
 description: make operation retryable.
-version: 0.0.5
+version: 0.0.6
 homepage: https://github.com/neutronstarer/retryable_dart
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
-
 dependencies:
-  cancelable: <1.0.0
+  cancelable: ">=0.0.1 <1.0.0"
 
 dev_dependencies:
   test:

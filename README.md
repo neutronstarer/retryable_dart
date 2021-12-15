@@ -15,7 +15,7 @@ void main(){
     try {
       final res = await retry<int>(
         () async {
-          debugPrint('$i');
+          print('$i');
           if (i == exceptionI) {
             throw Exception('exit');
           }
@@ -35,9 +35,9 @@ void main(){
           await Future.delayed(const Duration(seconds: 1));
         },
       );
-      debugPrint('$res');
+      print('$res');
     } catch (e) {
-      debugPrint(e.toString());
+      print(e.toString());
     }
 }
 ```

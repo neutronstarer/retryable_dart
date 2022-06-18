@@ -21,3 +21,7 @@
 ## 0.0.6
 
 * TODO: optimize project.
+
+## 1.0.0
+
+* TODO: Stable.

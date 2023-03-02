@@ -10,7 +10,10 @@ typedef Able = Future<void> Function(int i, dynamic error);
 /// [cancelable] Cancelable context.
 /// [cancel] Cancel function called when [cancelable].cancel().
 /// [able] Able to retry
-Future<T> retry<T>(Future<T> Function() computation, {Cancelable? cancelable, Future<void> Function()? cancel, Able? able}) async {
+Future<T> retry<T>(Future<T> Function() computation,
+    {Cancelable? cancelable,
+    Future<void> Function()? cancel,
+    Able? able}) async {
   bool cancelled = false;
   final disposable = cancelable?.whenCancel(() {
     if (cancelled == true) {
@@ -26,11 +29,11 @@ Future<T> retry<T>(Future<T> Function() computation, {Cancelable? cancelable, Fu
   while (true) {
     try {
       var t = await computation();
-      await disposable?.dispose();
+      disposable?.dispose();
       return t;
     } catch (e) {
       if (able == null || cancelled == true) {
-        await disposable?.dispose();
+        disposable?.dispose();
         rethrow;
       }
       try {
@@ -39,7 +42,7 @@ Future<T> retry<T>(Future<T> Function() computation, {Cancelable? cancelable, Fu
           rethrow;
         }
       } catch (e) {
-        await disposable?.dispose();
+        disposable?.dispose();
         rethrow;
       }
     }

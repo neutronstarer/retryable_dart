@@ -1,16 +1,18 @@
+import 'dart:async';
+
 import 'package:cancelable/cancelable.dart';
 
 /// [Able] Able means able to retry.
 /// [i] Current retry times.
 /// [error] Latest error.
-typedef Able = Future<void> Function(int i, dynamic error);
+typedef Able = FutureOr<void> Function(int i, dynamic error);
 
 /// [retry] Retry operation.
 /// [computation] Computation operation.
 /// [cancelable] Cancelable context.
 /// [cancel] Cancel function called when [cancelable].cancel().
 /// [able] Able to retry
-Future<T> retry<T>(Future<T> Function() computation,
+Future<T> retry<T>(FutureOr<T> Function() computation,
     {Cancelable? cancelable,
     Future<void> Function()? cancel,
     Able? able}) async {

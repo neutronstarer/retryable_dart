@@ -29,3 +29,7 @@
 ## 1.0.1
 
 * TODO: Stable.
+
+## 4.0.0
+
+* TODO: Stable.

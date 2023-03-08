@@ -34,11 +34,13 @@ Future<T> retry<T>(FutureOr<T> Function() computation,
       disposable?.dispose();
       return t;
     } catch (e) {
-      if (able == null || cancelled == true) {
-        disposable?.dispose();
-        rethrow;
-      }
       try {
+        if (cancelled == true) {
+          rethrow;
+        }
+        if (able == null) {
+          rethrow;
+        }
         await able(++i, e);
         if (cancelled == true) {
           rethrow;

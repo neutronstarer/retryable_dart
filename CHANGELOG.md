@@ -41,3 +41,7 @@
 ## 4.2.0
 
 * TODO: Stable.
+
+## 4.2.1
+
+* TODO: Stable.

@@ -1,6 +1,6 @@
 name: retryable
 description: make operation retryable.
-version: 4.2.0
+version: 4.2.1
 homepage: https://github.com/neutronstarer/retryable_dart
 
 environment:

@@ -30,8 +30,9 @@ void main() {
           return i;
         },
         cancelable: cancelable,
-        cancel: () async {
+        cancel: () {
           timer.cancel();
+          return Exception('cancel');
         },
         able: (i, e) async {
           if (e is! Exception || e.toString().contains('retryable') == false) {
